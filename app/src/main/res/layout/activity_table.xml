@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+
+
+    android:fitsSystemWindows="true"
+
+
+    android:orientation="vertical"
+    >
+
+
+    <tlshop.android.tianlun.com.lindong.SideGroupLayout
+        android:id="@+id/hoverlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/frist_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+          >
+
+            <TextView
+                android:id="@+id/running_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:text="跑步数据"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+
+                android:layout_marginTop="80dp"
+                android:text="完成跑步后计算"
+
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!-- 左侧标题的父容器 -->
+
+                <TextView
+                    android:id="@+id/tv_table_title_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="2.5"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:padding="5dp"
+
+                    android:text="总标题"
+
+                    android:textSize="12sp"/>
+
+
+                <!-- 右侧标题的父容器可实现水平滚动 -->
+                <tlshop.android.tianlun.com.lindong.SyncHorizontalScrollView
+                    android:id="@+id/title_horsv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/right_title_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <!--<include layout="@layout/table_sales_right_tab"/>-->
+                    </LinearLayout>
+                </tlshop.android.tianlun.com.lindong.SyncHorizontalScrollView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <tlshop.android.tianlun.com.lindong.SideTopScrollView
+            android:id="@+id/sidescrollview"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 此kaitou gai-->
+
+                <tlshop.android.tianlun.com.lindong.GoHuaScrollView
+                    android:id="@+id/pull_refresh_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 左侧内容的父容器 -->
+                        <tlshop.android.tianlun.com.lindong.MyListView
+                            android:id="@+id/left_container_listview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:divider="@null"
+
+                            >
+                        </tlshop.android.tianlun.com.lindong.MyListView>
+
+
+                        <!-- 右侧内容的父容器 实现水平滚动 -->
+                        <tlshop.android.tianlun.com.lindong.SyncHorizontalScrollView
+                            android:id="@+id/content_horsv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:fillViewport="true"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <tlshop.android.tianlun.com.lindong.MyListViewYa
+                                    android:id="@+id/right_container_listview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#ffffff"
+                                    android:divider="@null"
+                                    android:fillViewport="true"
+                                    android:scrollbars="none">
+                                </tlshop.android.tianlun.com.lindong.MyListViewYa>
+                            </LinearLayout>
+
+                        </tlshop.android.tianlun.com.lindong.SyncHorizontalScrollView>
+                    </LinearLayout>
+                </tlshop.android.tianlun.com.lindong.GoHuaScrollView>
+                <!-- 此jieshu -->
+
+
+            </LinearLayout>
+        </tlshop.android.tianlun.com.lindong.SideTopScrollView>
+
+    </tlshop.android.tianlun.com.lindong.SideGroupLayout>
+</LinearLayout>
